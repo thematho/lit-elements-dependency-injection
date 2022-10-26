@@ -7,7 +7,7 @@
     "start": "webpack serve",
     "build": "webpack",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages --branch main -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -39,7 +39,7 @@
     "css-loader": "6.7.1",
     "extract-loader": "5.1.0",
     "file-loader": "6.2.0",
-    "gh-pages": "^1.1.0",
+    "gh-pages": "1.2.0",
     "html-webpack-plugin": "5.5.0",
     "postcss-loader": "7.0.1",
     "sass": "1.55.0",
