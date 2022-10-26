@@ -19,7 +19,7 @@ export class Orange extends DependencyProviderMixin(LitElement) {
 
 	connectedCallback() {
 		super.connectedCallback();
-		this._providers.set('color', 'Orange');
+		this._providers.set('color', { name: 'Orange', color: '#ff6200' });
 	}
 
 	render() {

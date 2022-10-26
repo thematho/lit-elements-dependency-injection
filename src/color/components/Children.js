@@ -15,6 +15,9 @@ export class Children extends InjectMixin(LitElement) {
 			border-radius: 4px;
 			text-align: center;
 		}
+		span {
+			font-weight: bold;
+		}
 	`;
 
 	static properties = {};
@@ -30,7 +33,8 @@ export class Children extends InjectMixin(LitElement) {
 	}
 
 	render() {
-		return html`I'm inside ${this._color} !`;
+		return html`I'm inside&nbsp;
+			<span style="color:${this._color?.color}">${this._color?.name}!</span>`;
 	}
 }
 

@@ -1,7 +1,7 @@
 @use '../common.scss';
 
 body {
-    display: grid;
+    display: inline-grid;
     grid-template: 1fr 1fr 200px / 2fr 2fr;
     gap: 2rem;
     justify-items: center;
@@ -9,7 +9,8 @@ body {
 }
 
 header {
-    grid-column: 1/-1;
+    left: 0;
+    right: 0;
 }
 
 orange-container,
@@ -23,4 +24,36 @@ pink-container {
 mwc-button {
     grid-column: 1/-1;
     margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        font-size: xx-large;
+        grid-template: 1fr 1fr /1fr;
+    }
+
+    orange-container,
+    pink-container {
+        height: 400px;
+    }
+
+    orange-container {
+        margin-top: calc(64px + 1rem);
+    }
+
+    pink-container {
+        margin-top: 1rem;
+    }
+
+    children-element {
+        height: 150px;
+    }
+
+    mwc-button {
+        position: fixed;
+        top: 10px;
+        right: 2rem;
+        z-index: 5;
+    }
+
 }

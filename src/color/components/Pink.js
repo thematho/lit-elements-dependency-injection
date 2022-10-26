@@ -19,7 +19,7 @@ export class Pink extends DependencyProviderMixin(LitElement) {
 
 	connectedCallback() {
 		super.connectedCallback();
-		this._providers.set('color', 'Pink');
+		this._providers.set('color', { name: 'Pink', color: '#ff4081' });
 	}
 
 	render() {
