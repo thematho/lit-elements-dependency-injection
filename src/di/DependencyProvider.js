@@ -7,9 +7,9 @@ export const DependencyProviderMixin = (superclass) =>
 		connectedCallback() {
 			super.connectedCallback();
 			this.addEventListener('inject-provider', (event) => {
-				const { key } = event.detail;
-				if (this._providers.has(key)) {
-					event.detail.provider = this._providers.get(key);
+				const { dependencyName } = event;
+				if (this._providers.has(dependencyName)) {
+					event.dependency = this._providers.get(dependencyName);
 					event.preventDefault();
 					event.stopPropagation();
 				}

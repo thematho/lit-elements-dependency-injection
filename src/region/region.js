@@ -2,7 +2,7 @@
 
 import './components/USRegion.js';
 import './components/EURegion.js';
-import './components/RegionalProduct.js';
+import './components/Product.js';
 import './components/RegionProductManagement.js';
 import './components/ProductList.js';
 

@@ -14,26 +14,26 @@ export class Product extends InjectMixin(LitElement) {
 	static properties = {
 		price: { Number },
 		releaseDate: { String },
-	};
+	}; //
 
 	connectedCallback() {
 		super.connectedCallback();
 		this._currency = this.inject('currency');
-		this._tax = this.inject('tax');
+		this._taxService = this.inject('TaxCalculatorService');
 		this._dateService = this.inject('DateService');
 		this.requestUpdate();
 	}
 
 	_retailPrice() {
-		return this.price * (this._tax / 100) + this.price;
+		return;
 	}
 
 	render() {
 		return html`<div>Price ${this._currency} ${this.price}</div>
-			<div>Retail price (%${this._tax}) ${this._retailPrice()}</div>
+			<div>Retail price: ${this._taxService.calculateGross(this.price)}</div>
 			<div>Release date ${this._dateService?.getDate(this.releaseDate)}</div>`;
 	}
 }
 
-if (!customElements.get('regional-product'))
-	customElements.define('regional-product', Product);
+if (!customElements.get('product-element'))
+	customElements.define('product-element', Product);

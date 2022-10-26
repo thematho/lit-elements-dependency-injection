@@ -1,0 +1,21 @@
+@use "@material/typography/mdc-typography";
+@use "@material/elevation/mdc-elevation";
+
+body {
+    display: grid;
+    grid-template: 1fr 200px / 2fr 2fr;
+    gap: 2rem;
+    justify-items: center;
+}
+
+orange-container,
+pink-container {
+    width: 500px;
+    height: 500px;
+    border-radius: 4px;
+}
+
+mwc-button {
+    grid-column: 1/-1;
+    margin: 0 auto;
+}

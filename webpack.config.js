@@ -9,8 +9,8 @@ module.exports = {
     entry: {
         index: ['./src/index.scss', './src/index.js'],
         region: ['./src/region/region.scss', './src/region/region.js'],
+        color: ['./src/color/color.scss', './src/color/color.js'],
     },
-
     module: {
         rules: [
             {
@@ -73,6 +73,12 @@ module.exports = {
             inject: true,
             filename: 'region/index.html',
             chunks: ['region'],
+        }),
+        new HtmlWebpackPlugin({
+            template: 'src/color/index.html',
+            inject: true,
+            filename: 'color/index.html',
+            chunks: ['color'],
         }),
         new webpack.SourceMapDevToolPlugin({}),
     ],

@@ -59,28 +59,28 @@ export class RegionProductManagement extends LitElement {
 				@drop=${this._handleDrop}
 				@dragenter=${this._handleDragEnter}
 			>
-				<regional-product
+				<product-element
 					.price=${10}
 					.releaseDate="2022-10-27"
 					draggable="true"
 					@dragstart=${this._handleDragStart}
 					@dragend=${this._handleDragEnd}
 				>
-				</regional-product>
+				</product-element>
 			</us-region>
 			<eu-region
 				@dragover=${this._handleDragOver}
 				@drop=${this._handleDrop}
 				@dragenter=${this._handleDragEnter}
 			>
-				<regional-product
+				<product-element
 					.price=${20}
 					.releaseDate="2022-10-27"
 					draggable="true"
 					@dragstart=${this._handleDragStart}
 					@dragend=${this._handleDragEnd}
 				>
-				</regional-product>
+				</product-element>
 			</eu-region>
 			<product-list
 				.dragStartCallback=${this._handleDragStart.bind(this)}

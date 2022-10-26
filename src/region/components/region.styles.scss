@@ -1,0 +1,10 @@
+@use "@material/card";
+// @use '../common.scss';
+
+@include card.core-styles;
+
+:host {
+    @extend .mdc-card;
+    margin: 1rem;
+    padding: 1rem;
+}

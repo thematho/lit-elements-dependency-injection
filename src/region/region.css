@@ -1,17 +1,15 @@
-@use "@material/card";
+/* @use "@material/card";
 @use '../common.scss';
 
-@include card.core-styles;
+@include card.core-styles; */
 
 region-product-management {
     display: grid;
     grid-template: 1fr /1fr 1fr 300px;
 }
 
-eu-region,
-us-region,
 product-list {
-    @extend .mdc-card;
+    /* @extend .mdc-card; */
     margin: 1rem;
     padding: 1rem;
 }

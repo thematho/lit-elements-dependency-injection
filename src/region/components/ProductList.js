@@ -5,6 +5,7 @@ import { Icon } from '@material/mwc-icon';
 
 import { DependencyProviderMixin } from '@di/DependencyProvider';
 import { DateServiceFactory } from '../factories/DateServiceFactory';
+import { TaxCalculator } from "../services/TaxCalculator";
 
 const LitClass = DependencyProviderMixin(ScopedElementsMixin(LitElement));
 
@@ -35,9 +36,9 @@ export class ProductList extends LitClass {
 	connectedCallback() {
 		super.connectedCallback();
 		this._providers = new Map();
-		this._providers.set('currency', '');
 		this._providers.set('DateService', DateServiceFactory());
-		this._providers.set('tax', 0);
+		this._providers.set('TaxCalculatorService', new TaxCalculator(0));
+		this._providers.set('currency', '');
 	}
 
 	_addProduct() {
@@ -45,7 +46,7 @@ export class ProductList extends LitClass {
 			this.shadowRoot.querySelector('#price').valueAsNumber,
 			this.shadowRoot.querySelector('#date').value,
 		];
-		const product = document.createElement('regional-product');
+		const product = document.createElement('product-element');
 		product.price = price;
 		product.date = date;
 		product.draggable = 'true';
@@ -69,7 +70,12 @@ export class ProductList extends LitClass {
 	render() {
 		return html`
 			<input id="price" type="number" placeholder="Price" />
-			<input id="date" type="date" placehooder="Release date" />
+			<input
+				id="date"
+				type="date"
+				value=${new Date().toLocaleDateString('en-CA')	}
+				placehooder="Release date"
+			/>
 			<mwc-button
 				raised
 				label="Add product"
