@@ -54,7 +54,7 @@ export class ProductList extends LitClass {
 		];
 		const product = document.createElement('product-element');
 		product.price = price;
-		product.date = date;
+		product.releaseDate = date;
 		product.draggable = 'true';
 		product.addEventListener('dragstart', this.dragStartCallback);
 		product.addEventListener('dragend', this.dragEndCallback);
