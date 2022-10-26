@@ -3,6 +3,7 @@
 body {
     display: inline-grid;
     grid-template: 1fr 1fr 200px / 2fr 2fr;
+    width: 100%;
     gap: 2rem;
     justify-items: center;
     margin: 0;
@@ -21,12 +22,20 @@ pink-container {
     margin-top: calc(64px + 2rem);
 }
 
+orange-container {
+    margin-left: auto;
+}
+
+pink-container {
+    margin-right: auto;
+}
+
 mwc-button {
     grid-column: 1/-1;
     margin: 0 auto;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
     body {
         font-size: xx-large;
         grid-template: 1fr 1fr /1fr;
@@ -35,6 +44,8 @@ mwc-button {
     orange-container,
     pink-container {
         height: 400px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     orange-container {
