@@ -1,7 +1,9 @@
 @use "@material/card";
+@use "@material/list";
 @use '../common.scss';
 
 @include card.core-styles;
+@include list.deprecated-core-styles;
 
 region-product-management {
     display: grid;
@@ -16,6 +18,9 @@ product-list {
     padding: 1rem;
 }
 
+.mdc-deprecated-list {
+    min-height: 500px;
+}
 
 product-element:active {
     cursor: grabbing;
@@ -23,9 +28,9 @@ product-element:active {
 }
 
 .product--placeholder {
-    height: 54px;
-    margin: 1rem;
-    border: solid 1px black;
+    opacity: .3;
+    height: 64px;
+    border: dotted 1px #ff6200;
 }
 
 .dragged {

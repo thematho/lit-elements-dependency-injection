@@ -1,13 +1,16 @@
-// import { MDCRipple } from '@material/ripple/index';
+import { MDCRipple } from "@material/ripple";
+import { MDCList } from "@material/list";
 
-import './components/USRegion.js';
-import './components/EURegion.js';
-import './components/Product.js';
-import './components/RegionProductManagement.js';
-import './components/ProductList.js';
+import "./components/USRegion.js";
+import "./components/EURegion.js";
+import "./components/Product.js";
+import "./components/RegionProductManagement.js";
+import "./components/ProductList.js";
 
-// const selector = '.mdc-button, .mdc-icon-button, .mdc-card__primary-action';
-// const ripples = [].map.call(document.querySelectorAll(selector), function (el) {
-// 	return new MDCRipple(el);
-// });
+document.addEventListener("DOMContentLoaded", (event) => {
+  const list = new MDCList(document.querySelector(".mdc-deprecated-list"));
 
+  const listItemRipples = list.listElements.map(
+    (listItemEl) => new MDCRipple(listItemEl)
+  );
+});
