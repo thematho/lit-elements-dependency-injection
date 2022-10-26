@@ -32,3 +32,7 @@ The first one is a simple example of a children moving arround receiving an obje
 The second example resolves 3 dependencies: A Factory, a Singleton service and a simple variable, to determinate values and descriptions of a Product in Europe and America, doing drag and drop of the product item in the respective containers.
 
 # License
+
+This project is licensed under the terms of the MIT license.
+
+Presentation images and art cannot be used without consent of the owners.
