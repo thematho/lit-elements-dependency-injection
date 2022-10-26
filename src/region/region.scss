@@ -1,13 +1,30 @@
 @use "@material/card";
 @use "@material/list";
 @use '../common.scss';
+@import "@material/top-app-bar/mdc-top-app-bar";
+
 
 @include card.core-styles;
 @include list.deprecated-core-styles;
 
+.mdc-top-app-bar {
+    @include mdc-top-app-bar-fill-color(#ff6200);
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
 region-product-management {
     display: grid;
     grid-template: 1fr /1fr 1fr 300px;
+    margin-top: calc(64px + 1rem);
 }
 
 eu-region,
@@ -28,9 +45,10 @@ product-element:active {
 }
 
 .product--placeholder {
-    opacity: .3;
     height: 64px;
     border: dotted 1px #ff6200;
+    border-radius: 8px;
+    opacity: .3;
 }
 
 .dragged {
@@ -39,4 +57,11 @@ product-element:active {
 
 .drop {
     border: 1px solid var(--header-background);
+}
+
+@media screen and (max-width: 800px) {
+
+    region-product-management {
+        grid-template: repeat(3, 1fr) / 1fr;
+    }
 }

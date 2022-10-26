@@ -12,11 +12,23 @@ export class RegionProductManagement extends LitElement {
 	<li class="mdc-deprecated-list-item">
 		<span class="mdc-deprecated-list-item__ripple"></span>
 		<span class="mdc-deprecated-list-item__graphic material-icons">question_mark</span>
-        <span class="mdc-list-item__text">
-          <span class="mdc-list-item__primary-text">0.00 (Retail) - DD/MM/YYY</span>
-          <span class="mdc-list-item__secondary-text">0.00 Base price</span>
+        <span class="mdc-deprecated-list-item__text">
+          <span class="mdc-deprecated-list-item__primary-text">
+            <span>0.00</span
+            ><span>
+              Date: DD/MM/YYY</span
+            ></span
+          >
+          <span class="mdc-deprecated-list-item__secondary-text"
+            >0.00 Base price</span
+          >
         </span>
-	</li>`;
+        <span
+          class="mdc-deprecated-list-item__meta material-icons"
+          @click=${this._handleDelete}
+          >delete</span
+        >
+      </li>`;
   }
 
   _handleDragOver(e) {
@@ -30,7 +42,7 @@ export class RegionProductManagement extends LitElement {
   _handleDragLeave(e) {
     e.preventDefault();
     e.currentTarget.classList.remove("drop");
-		e.currentTarget.lastElementChild.removeChild(this._placeholder);
+    e.currentTarget.lastElementChild.removeChild(this._placeholder);
   }
 
   _handleDrop(e) {
@@ -69,40 +81,22 @@ export class RegionProductManagement extends LitElement {
         @drop=${this._handleDrop}
         @dragenter=${this._handleDragEnter}
       >
-        <h2 class="mdc-typography--headline6">United States</h2>
-        <h3 class="mdc-typography--subtitle2">
+        <h2 class="mdc-typography--headline2">United States</h2>
+        <h3 class="mdc-typography--subtitle1">
           Drag a Product into this area to see it's localized price and details
         </h3>
-        <ul class="mdc-deprecated-list mdc-deprecated-list--two-line">
-          <product-element
-            .price=${10}
-            .releaseDate="2022-10-27"
-            draggable="true"
-            @dragstart=${this._handleDragStart}
-            @dragend=${this._handleDragEnd}
-          >
-          </product-element>
-        </ul>
+        <ul class="mdc-deprecated-list mdc-deprecated-list--two-line"></ul>
       </us-region>
       <eu-region
         @dragover=${this._handleDragOver}
         @drop=${this._handleDrop}
         @dragenter=${this._handleDragEnter}
       >
-        <h2 class="mdc-typography--headline6">Europe</h2>
-        <h3 class="mdc-typography--subtitle2">
+        <h2 class="mdc-typography--headline2">Europe</h2>
+        <h3 class="mdc-typography--subtitle1">
           Drag a Product into this area to see it's localized price and details
         </h3>
-        <ul class="mdc-deprecated-list mdc-deprecated-list--two-line">
-          <product-element
-            .price=${20}
-            .releaseDate="2022-10-27"
-            draggable="true"
-            @dragstart=${this._handleDragStart}
-            @dragend=${this._handleDragEnd}
-          >
-          </product-element>
-        </ul>
+        <ul class="mdc-deprecated-list mdc-deprecated-list--two-line"></ul>
       </eu-region>
       <product-list
         .dragStartCallback=${this._handleDragStart.bind(this)}

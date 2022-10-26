@@ -27,8 +27,8 @@ export class Product extends InjectMixin(LitElement) {
     this.requestUpdate();
   }
 
-  _retailPrice() {
-    return;
+  _handleDelete() {
+    this.parentElement.removeChild(this);
   }
 
   render() {
@@ -38,10 +38,22 @@ export class Product extends InjectMixin(LitElement) {
         <span class="mdc-deprecated-list-item__graphic material-icons"
           >${this._currency}</span
         >
-        <span class="mdc-list-item__text">
-          <span class="mdc-list-item__primary-text">${this._taxService.calculateGross(this.price)} (Retail) - ${this._dateService?.getDate(this.releaseDate)}</span>
-          <span class="mdc-list-item__secondary-text">${this.price} Base price</span>
+        <span class="mdc-deprecated-list-item__text">
+          <span class="mdc-deprecated-list-item__primary-text">
+            <span>${this._taxService.calculateGross(this.price)}</span
+            ><span class="date">
+              Date: ${this._dateService?.getDate(this.releaseDate)}</span
+            ></span
+          >
+          <span class="mdc-deprecated-list-item__secondary-text"
+            >${this.price} Base price</span
+          >
         </span>
+        <span
+          class="mdc-deprecated-list-item__meta material-icons"
+          @click=${this._handleDelete}
+          >delete</span
+        >
       </li>
     `;
   }

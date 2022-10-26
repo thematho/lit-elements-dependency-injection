@@ -31,6 +31,12 @@ export class ProductList extends LitClass {
 		.drop {
 			border: 1px solid var(--header-background);
 		}
+    input {
+      margin-bottom: 2rem;
+    }
+		mwc-button{ 
+			--mdc-theme-primary: #525199;
+		}
 	`;
 
 	connectedCallback() {
