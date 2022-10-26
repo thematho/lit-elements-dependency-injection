@@ -1,3 +1,10 @@
+@use "@material/typography/mdc-typography";
+@use "@material/elevation/mdc-elevation";
+@use "@material/top-app-bar/mdc-top-app-bar";
+@use "@material/icon-button";
+
+@import "@material/icon-button/mdc-icon-button";
+
 body {
     background-color: #f2f2f2;
 }
