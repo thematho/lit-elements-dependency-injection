@@ -5,6 +5,9 @@ This project contains demo examples of how to implement a Dependency resolution 
 
 Found the mixin code inside `src/di`
 
+## Demo
+[Live demo](https://thematho.github.io/lit-elements-dependency-injection-demo).
+
 ## Install
 
 Run `npm i`
